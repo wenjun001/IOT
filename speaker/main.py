@@ -1,6 +1,6 @@
 from gtts import gTTS
 import os
-text = "Hello Sunny"
+text = "Hello deshan ma  you are a boy today is saturday"
 tts = gTTS(text, lang='en')
 tts.save("temp.mp3")
 os.system("play temp.mp3")
