@@ -61,6 +61,7 @@ ws.onmessage = function (message) {
                 // transfer it let alexa to say it.
                 if(message.data=='turnonlight'){
                     ws.send("Hi friend I have turn on light !");
+
                    return
 
                 }
