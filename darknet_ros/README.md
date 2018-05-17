@@ -1,3 +1,13 @@
+
+TO SUPPORT GPU need add following in your bashrc.
+
+
+export PATH=/usr/local/cuda-9.1/bin${PATH:+:${PATH}}
+
+
+export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+
 # YOLO v2 for ROS: Real-Time Object Detection for ROS
 
 ## Overview
