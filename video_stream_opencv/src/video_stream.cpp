@@ -45,7 +45,10 @@
 #include <boost/assign/list_of.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/thread/sync_queue.hpp>
-
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <ctime>
+using namespace std;
 boost::sync_queue<cv::Mat> framesQueue;
 cv::VideoCapture cap;
 std::string video_stream_provider_type;
@@ -249,6 +252,7 @@ int main(int argc, char** argv)
     boost::thread cap_thread(do_capture, nh);
 
     ros::Rate r(fps);
+    int count = 0;
     while (nh.ok()) {
 	if (!framesQueue.empty())
 		framesQueue.pull(frame);
@@ -256,8 +260,11 @@ int main(int argc, char** argv)
         if (pub.getNumSubscribers() > 0){
             // Check if grabbed frame is actually filled with some content
             if(!frame.empty()) {
+                time_t now = time(0);
+                char* dt = ctime(&now);
+               cv::putText(frame, dt, cv::Point(100, 50), cv::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0, 111, 255),1,8,0);
                 // Flip the image if necessary
-                if (flip_image)
+                if (flip_image) 
                     cv::flip(frame, frame, flip_value);
                 msg = cv_bridge::CvImage(header, "bgr8", frame).toImageMsg();
                 // Create a default camera info if we didn't get a stored one on initialization
@@ -268,6 +275,13 @@ int main(int argc, char** argv)
                 }
                 // The timestamps are in sync thanks to this publisher
                 pub.publish(*msg, cam_info_msg, ros::Time::now());
+		count = count+1;
+		if(count>=100){
+			std::cout<<"pub time:"<< dt <<" pub count:" << count <<std::endl;
+			count = 0;
+		}
+		
+
             }
 
             ros::spinOnce();
