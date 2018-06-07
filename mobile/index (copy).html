@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Mobile Bootstrap Theme</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/jquery.mobile.theme.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  <style>
+    div[data-role="page"]{background:#fff;}
+  </style>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+    <h1>Bootstrap 3 theme for jQuery Mobile</h1>
+</div>
+<a href="https://github.com/makinacorpus/jQuery-Mobile-Bootstrap-Theme"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  <div class="ui-grid-a ui-responsive">
+    <div class="ui-block-a ui-body-a">
+      <ul data-role="listview">
+        <li><a href="http://www.makina-corpus.com">Makina Corpus</a></li>
+        <li><a href="https://github.com/makinacorpus/jQuery-Mobile-Bootstrap-Theme">Fork me on github</a>
+        <li><a href="http://getbootstrap.com">Bootstrap</a>
+        <li><a href="https://jquerymobile.com">jQuery Mobile</a>
+      </ul>
+    </div>
+    <div class="ui-block-b"></div>
+  </div>
+
+  <div class="ui-grid-b ui-responsive">
+    <div class="ui-block-a ui-body-a">
+    <div class="ui-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-a" data-iconpos="notext" data-theme="a" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">A</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-a" data-iconpos="notext" data-theme="a" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-a" data-theme="a" data-form="ui-body-a" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-a" href="#" data-theme="a">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="a" data-theme="a" data-form="ui-bar-a">List Header</li>
+              <li data-form="ui-btn-up-a" data-swatch="a" data-theme="a">Read-only list item</li>
+              <li data-form="ui-btn-up-a"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-a" id="radio-choice-1-a" value="choice-1" checked="checked">
+              <label for="radio-choice-1-a" data-form="ui-btn-up-a">Radio</label>
+          <input type="checkbox" name="checkbox-a" id="checkbox-a" checked="checked">
+          <label for="checkbox-a" data-form="ui-btn-up-a">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-a" id="radio-view-a-a" value="list" checked="checked">
+          <label for="radio-view-a-a" data-form="ui-btn-up-a">On</label>
+          <input type="radio" name="radio-view-a" id="radio-view-b-a" value="grid">
+          <label for="radio-view-b-a" data-form="ui-btn-up-a">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-a" data-native-menu="false" data-theme="a" data-form="ui-btn-up-a">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+      
+      <input type="text" value="Text Input" class="input" data-form="ui-body-a">
+      
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-a" data-theme="a" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="a" data-form="ui-btn-up-a">Button</button>
+    </div>
+
+    </div>
+    <div class="ui-block-b ui-body-b">
+
+    <div class="ui-header ui-bar-b" data-swatch="b" data-theme="b" data-form="ui-bar-b" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-b" data-iconpos="notext" data-theme="b" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">B</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-b" data-iconpos="notext" data-theme="b" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-b" data-theme="b" data-form="ui-body-b" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-b" href="#" data-theme="b">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="b" data-theme="b" data-form="ui-bar-b">List Header</li>
+              <li data-form="ui-btn-up-b" data-swatch="b" data-theme="b">Read-only list item</li>
+              <li data-form="ui-btn-up-b"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-b" id="radio-choice-1-b" value="choice-1" checked="checked">
+              <label for="radio-choice-1-b" data-form="ui-btn-up-b">Radio</label>
+          <input type="checkbox" name="checkbox-b" id="checkbox-b" checked="checked">
+          <label for="checkbox-b" data-form="ui-btn-up-b">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-b" id="radio-view-a-b" value="list" checked="checked">
+          <label for="radio-view-a-b" data-form="ui-btn-up-b">On</label>
+          <input type="radio" name="radio-view-b" id="radio-view-b-b" value="grid">
+          <label for="radio-view-b-b" data-form="ui-btn-up-b">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-b" data-native-menu="false" data-theme="b" data-form="ui-btn-up-b">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+      
+      <input type="text" value="Text Input" class="input" data-form="ui-body-b">
+      
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-b" data-theme="b" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="b" data-form="ui-btn-up-b">Button</button>
+    </div>
+
+    </div>
+    <div class="ui-block-c ui-body-c">
+
+    <div class="ui-header ui-bar-c" data-swatch="c" data-theme="c" data-form="ui-bar-c" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-theme="c" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">C</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-theme="c" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-c" data-theme="c" data-form="ui-body-c" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-c" href="#" data-theme="c">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="c" data-theme="c" data-form="ui-bar-c">List Header</li>
+              <li data-form="ui-btn-up-c" data-swatch="c" data-theme="c">Read-only list item</li>
+              <li data-form="ui-btn-up-c"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-c" id="radio-choice-1-c" value="choice-1" checked="checked">
+              <label for="radio-choice-1-c" data-form="ui-btn-up-c">Radio</label>
+          <input type="checkbox" name="checkbox-c" id="checkbox-c" checked="checked">
+          <label for="checkbox-c" data-form="ui-btn-up-c">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-c" id="radio-view-a-c" value="list" checked="checked">
+          <label for="radio-view-a-c" data-form="ui-btn-up-c">On</label>
+          <input type="radio" name="radio-view-c" id="radio-view-b-c" value="grid">
+          <label for="radio-view-b-c" data-form="ui-btn-up-c">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-c" data-native-menu="false" data-theme="c" data-form="ui-btn-up-c">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+      
+      <input type="text" value="Text Input" class="input" data-form="ui-body-c">
+      
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-c" data-theme="c" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="c" data-form="ui-btn-up-c">Button</button>
+    </div>
+
+    </div>
+  </div>
+  <div class="ui-grid-b ui-responsive">
+    <div class="ui-block-a ui-body-d">
+
+    <div class="ui-header ui-bar-d" data-swatch="d" data-theme="d" data-form="ui-bar-d" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-d" data-iconpos="notext" data-theme="d" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">D</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-d" data-iconpos="notext" data-theme="d" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-d" data-theme="d" data-form="ui-body-d" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-d" href="#" data-theme="d">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="d" data-theme="d" data-form="ui-bar-d">List Header</li>
+              <li data-form="ui-btn-up-d" data-swatch="d" data-theme="d">Read-only list item</li>
+              <li data-form="ui-btn-up-d"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-d" id="radio-choice-1-d" value="choice-1" checked="checked">
+              <label for="radio-choice-1-d" data-form="ui-btn-up-d">Radio</label>
+          <input type="checkbox" name="checkbox-d" id="checkbox-d" checked="checked">
+          <label for="checkbox-d" data-form="ui-btn-up-d">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-d" id="radio-view-a-d" value="list" checked="checked">
+          <label for="radio-view-a-d" data-form="ui-btn-up-d">On</label>
+          <input type="radio" name="radio-view-d" id="radio-view-b-d" value="grid">
+          <label for="radio-view-b-d" data-form="ui-btn-up-d">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-d" data-native-menu="false" data-theme="d" data-form="ui-btn-up-d">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+      
+      <input type="text" value="Text Input" class="input" data-form="ui-body-d">
+      
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-d" data-theme="d" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="d" data-form="ui-btn-up-d">Button</button>
+    </div>
+
+    </div>
+    <div class="ui-block-b ui-body-e">
+
+    <div class="ui-header ui-bar-e" data-swatch="e" data-theme="e" data-form="ui-bar-e" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-e" data-iconpos="notext" data-theme="e" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">E</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-e" data-iconpos="notext" data-theme="e" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-e" data-theme="e" data-form="ui-body-e" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-e" href="#" data-theme="e">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="e" data-theme="e" data-form="ui-bar-e">List Header</li>
+              <li data-form="ui-btn-up-e" data-swatch="e" data-theme="e">Read-only list item</li>
+              <li data-form="ui-btn-up-e"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-e" id="radio-choice-1-e" value="choice-1" checked="checked">
+              <label for="radio-choice-1-e" data-form="ui-btn-up-e">Radio</label>
+          <input type="checkbox" name="checkbox-e" id="checkbox-e" checked="checked">
+          <label for="checkbox-e" data-form="ui-btn-up-e">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-e" id="radio-view-a-e" value="list" checked="checked">
+          <label for="radio-view-a-e" data-form="ui-btn-up-e">On</label>
+          <input type="radio" name="radio-view-e" id="radio-view-b-e" value="grid">
+          <label for="radio-view-b-e" data-form="ui-btn-up-e">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-e" data-native-menu="false" data-theme="e" data-form="ui-btn-up-e">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+      
+      <input type="text" value="Text Input" class="input" data-form="ui-body-e">
+      
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-e" data-theme="e" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="e" data-form="ui-btn-up-e">Button</button>
+    </div>
+
+    </div>
+    <div class="ui-block-c ui-body-f">
+
+    <div class="ui-header ui-bar-f" data-swatch="f" data-theme="f" data-form="ui-bar-f" data-role="header" role="banner">
+      <a class="ui-btn-left ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-f" data-iconpos="notext" data-theme="f" data-role="button" data-icon="home" title=" Home ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Home </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-home ui-icon-shadow"></span>
+        </span>
+      </a>
+      <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">F</h1>
+      <a class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-f" data-iconpos="notext" data-theme="f" data-role="button" data-icon="grid" title=" Navigation ">
+        <span class="ui-btn-inner ui-btn-corner-all">
+          <span class="ui-btn-text"> Navigation </span>
+          <span data-form="ui-icon" class="ui-icon ui-icon-grid ui-icon-shadow"></span>
+        </span>
+      </a>
+    </div>
+    <div class="ui-content ui-body-f" data-theme="f" data-form="ui-body-f" data-role="content" role="main">
+      <p>Sample text and <a class="ui-link" data-form="ui-body-f" href="#" data-theme="f">links</a>.</p>
+      <ul data-role="listview" data-inset="true">
+              <li data-role="list-divider" data-swatch="f" data-theme="f" data-form="ui-bar-f">List Header</li>
+              <li data-form="ui-btn-up-f" data-swatch="f" data-theme="f">Read-only list item</li>
+              <li data-form="ui-btn-up-f"><a href="#">Linked list item</a></li>
+      </ul>
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-choice-f" id="radio-choice-1-f" value="choice-1" checked="checked">
+              <label for="radio-choice-1-f" data-form="ui-btn-up-f">Radio</label>
+          <input type="checkbox" name="checkbox-f" id="checkbox-f" checked="checked">
+          <label for="checkbox-f" data-form="ui-btn-up-f">Checkbox</label>
+          </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <input type="radio" name="radio-view-f" id="radio-view-a-f" value="list" checked="checked">
+          <label for="radio-view-a-f" data-form="ui-btn-up-f">On</label>
+          <input type="radio" name="radio-view-f" id="radio-view-b-f" value="grid">
+          <label for="radio-view-b-f" data-form="ui-btn-up-f">Off</label>
+        </fieldset>
+      </div>
+      <div data-role="fieldcontain">
+        <select name="select-choice" id="select-choice-f" data-native-menu="false" data-theme="f" data-form="ui-btn-up-f">
+          <option value="standard">Option 1</option>
+          <option value="rush">Option 2</option>
+          <option value="express">Option 3</option>
+          <option value="overnight">Option 4</option>
+        </select>
+      </div>
+
+      <input type="text" value="Text Input" class="input" data-form="ui-body-f">
+
+      <div data-role="fieldcontain">
+        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-f" data-theme="f" data-highlight="true">
+      </div>
+      <button data-icon="star" data-theme="f" data-form="ui-btn-up-f">Button</button>
+    </div>
+
+  </div>
+  </div>
+</div>
+</body>
+</html>
