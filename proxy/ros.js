@@ -11,7 +11,7 @@ console.log('start once again');
 
 
 var ros = new ROSLIB.Ros({
-    url : 'ws://192.168.1.10:9090'
+    url : 'ws://192.168.1.100:9090'
   });
 
   ros.on('connection', function() {
@@ -49,6 +49,13 @@ app.post('/playvideo/:music_type/:request_id', function (req, res) {
 
 
 })
+
+app.post('/stop', function (req, res) {
+  res.json({"status":"DONE");
+})
+
+
+
 
 
 
