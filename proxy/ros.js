@@ -45,13 +45,31 @@ app.get('/getTopics', function (req, res) {
 
 
 app.post('/playvideo/:music_type/:request_id', function (req, res) {
-  res.json({"music_type":req.params.music_type,"request_id":req.params.request_id});
+
+  var cmdVel = new ROSLIB.Topic({
+    ros : ros,
+    name : '/command',
+    messageType : 'std_msgs/String'
+  });
+  var command = new ROSLIB.Message({data: req.params.music_type+" "+req.params.request_id});
+   cmdVel.publish(command);
+
+  res.json({"status":"DONE"});
+  // res.json({"music_type":req.params.music_type,"request_id":req.params.request_id});
 
 
 })
 
 app.post('/stop', function (req, res) {
-  res.json({"status":"DONE");
+  var cmdVel = new ROSLIB.Topic({
+    ros : ros,
+    name : '/command',
+    messageType : 'std_msgs/String'
+  });
+    var command = new ROSLIB.Message({data: "stop"});
+   cmdVel.publish(command);
+
+  res.json({"status":"STOP DONE"});
 })
 
 
