@@ -1,0 +1,22 @@
+[0;1;32m●[0m apache2.service - LSB: Apache2 web server
+   Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: [0;1;32mactive (running)[0m since Mon 2018-06-11 20:00:57 PDT; 1 day 1h ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 29611 ExecReload=/etc/init.d/apache2 reload (code=exited, status=0/SUCCESS)
+  Process: 1608 ExecStart=/etc/init.d/apache2 start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/apache2.service
+           ├─ 1680 /usr/sbin/apache2 -k start
+           ├─29627 /usr/sbin/apache2 -k start
+           └─29628 /usr/sbin/apache2 -k start
+
+Jun 11 20:00:56 wma-Inspiron-7577 systemd[1]: Starting LSB: Apache2 web server...
+Jun 11 20:00:56 wma-Inspiron-7577 apache2[1608]:  * Starting Apache httpd web server apache2
+Jun 11 20:00:56 wma-Inspiron-7577 apache2[1608]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jun 11 20:00:57 wma-Inspiron-7577 apache2[1608]:  *
+Jun 11 20:00:57 wma-Inspiron-7577 systemd[1]: Started LSB: Apache2 web server.
+Jun 12 07:35:01 wma-Inspiron-7577 systemd[1]: Reloading LSB: Apache2 web server.
+Jun 12 07:35:01 wma-Inspiron-7577 apache2[29611]:  * Reloading Apache httpd web server apache2
+Jun 12 07:35:01 wma-Inspiron-7577 apache2[29611]:  *
+Jun 12 07:35:01 wma-Inspiron-7577 systemd[1]: Reloaded LSB: Apache2 web server.

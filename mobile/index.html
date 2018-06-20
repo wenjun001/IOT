@@ -11,7 +11,15 @@
   <style>
     div[data-role="page"]{background:#fff;}
   </style>
+  <link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+
+      <link rel="shortcut icon" href="favicon.ico"/>
+<link rel="bookmark" href="favicon.ico"/>
 </head>
+
+
 <body>
 <div data-role="page">
 <!-- <div data-role="header" data-position="fixed">
@@ -305,11 +313,8 @@
         </fieldset>
       </div> -->
       <div data-role="fieldcontain">
-        <select  name="select-choice" id="select-choice-e" data-native-menu="false" data-theme="e" data-form="ui-btn-up-e">
-          <option value="kidmusic">kid music</option>
-          <option value="shayu">shayu</option>
-          <option value="happy">happy</option>
-          <option value="allInOne">allInOne</option>
+        <select  name="select-choice" id="select-choice-e"  data-native-menu="false" data-theme="e" data-form="ui-btn-up-e">
+
 
         </select>
       </div>
@@ -317,20 +322,30 @@
 
       <div data-role="fieldcontain">
         <select name="soft-music-select-choice" id="select-soft-music-choice-e" data-native-menu="false" data-theme="e" data-form="ui-btn-up-e">
-          <option value="softmusic">Soft Music</option>
-          <option value="year">year</option>
+        
         </select>
       </div>
 
 
 <!--       <input type="text" value="Text Input" class="input" data-form="ui-body-e">
        -->
-<!--       <div data-role="fieldcontain">
-        <input type="range" name="slider" value="50" min="0" max="100" data-form="ui-body-e" data-theme="e" data-highlight="true">
-      </div> -->
-      <button onclick="openCamara()" data-theme="e" data-form="ui-btn-up-e">start carama</button>
-      <button onclick="stop()" data-theme="e" data-form="ui-btn-up-e">stop video</button>
-    </div>
+
+       <div data-role="fieldcontain" >
+        <fieldset data-role="controlgroup" data-type="horizontal" style="margin:0 0 0 80px">
+          <button onclick="volumup()"  data-theme="e" data-form="ui-btn-up-e">+</button>
+          <button onclick="pause()"  data-theme="e" data-form="ui-btn-up-e">pause</button>
+          <button onclick="stop()"  data-theme="e" data-form="ui-btn-up-e">stop</button>
+         <button onclick="volumdown()"  data-theme="e" data-form="ui-btn-up-e">-</button>
+         
+        </fieldset>
+      </div>
+
+
+  
+     
+      <button disabled="true" onclick="openCamara()" data-theme="e" data-form="ui-btn-up-e">start camera</button>
+     
+   
 
     </div>
 <!--     <div class="ui-block-c ui-body-f">
@@ -397,22 +412,181 @@
 
 <script type="text/javascript">
   function openCamara(){
-    alert("open carma")
+    alert("open carma feature buding")
   }
 
-    function stop(){
-    alert("stop")
+ 
+
+     function stop(){
+      var urlStr = "http://192.168.1.100:8081/stop";
+           $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: "{}",
+        contentType: "text/json; charset=utf-8",
+        dataType: "text",
+        success: function (msg) {
+         console.log(msg)
+      }
+      }); 
+  }
+
+
+
+    function volumup(){
+      var urlStr = "http://192.168.1.100:8081/volumup";
+           $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: "{}",
+        contentType: "text/json; charset=utf-8",
+        dataType: "text",
+        success: function (msg) {
+         console.log(msg)
+      }
+      }); 
+  }
+        
+
+
+            function pause(){
+      var urlStr = "http://192.168.1.100:8081/pause";
+           $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: "{}",
+        contentType: "text/json; charset=utf-8",
+        dataType: "text",
+        success: function (msg) {
+         console.log(msg)
+      }
+      }); 
+  }
+
+
+    function volumdown(){
+      var urlStr = "http://192.168.1.100:8081/volumdown";
+           $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: "{}",
+        contentType: "text/json; charset=utf-8",
+        dataType: "text",
+        success: function (msg) {
+         console.log(msg)
+      }
+      }); 
   }
 
 $( document ).ready(function() {
     console.log( "ready!" );
+
+    types = []
+    var values = new Map()
+
+     $.get( "http://192.168.1.100:8081/getVideos", function( data ) {
+    console.log( "Data Loaded: " + data.res[1].video_name );
+    console.log(data.res.length)
+    for(var i = 0; i< data.res.length;i++){
+      var canNotFind = true;
+      for (var j = 0;j< types.length;j++){
+          if (types[j] == data.res[i].type_name){
+            canNotFind = false;
+          }
+      }
+      if(canNotFind){
+        types.push(data.res[i].type_name)
+      }
+    }
+    for (var m = 0; m < types.length;m++){
+      values.set(types[m],[])
+    }
+
+
+    for(var i = 0; i< data.res.length;i++){
+
+      if(values.has(data.res[i].type_name)){
+        obj = {"id":data.res[i].video_id,"name":data.res[i].video_name}
+        values.get(data.res[i].type_name).push(obj)
+      }
+
+    }
+
+    // build select
+  console.log(values.length)
+
+  if (values.get("kids music") != null){
+    $("#select-choice-e").append('<option value="0"  >kids music</option>');
+    var value = values.get("kids music");
+    for(var n = 0; n<value.length;n++){
+      $("#select-choice-e").append('<option value="'+value[n].id+'" >'+value[n].name+'</option>');
+
+    }
+
+  }
+
+    $('#select-choice-e').selectmenu('refresh');
+
+
+
+  if (values.get("soft music") != null){
+    $("#select-soft-music-choice-e").append('<option value="0"   >soft music</option>');
+    var value = values.get("soft music");
+    for(var n = 0; n<value.length;n++){
+      $("#select-soft-music-choice-e").append('<option value="'+value[n].id+'" >'+value[n].name+'</option>');
+
+    }
+
+  }
+
+    $('#select-soft-music-choice-e').selectmenu('refresh');
+
+   
+  });
+
       $("#select-choice-e").change(function(){
-   alert($('#select-choice-e').val())
+          //alert($('#select-choice-e').val())
+          if($('#select-choice-e').val()!='0'){
+            var urlStr = "http://192.168.1.100:8081/playvideo/1/"+$('#select-choice-e').val();
+            $.ajax({
+            type: "POST",
+            url: urlStr,
+            data: "{}",
+            contentType: "text/json; charset=utf-8",
+            dataType: "text",
+            success: function (msg) {
+             console.log(msg)
+              $("#select-choice-e option[value='0']").prop('selected', true);
+             $('#select-choice-e').selectmenu('refresh');
+
+          }
+          }); 
+
+          }
+
+
 });
 
 
   $("#select-soft-music-choice-e").change(function(){
-   alert($('#select-soft-music-choice-e').val())
+    if($('#select-soft-music-choice-e').val()!='0'){
+        var urlStr = "http://192.168.1.100:8081/playvideo/2/"+$('#select-soft-music-choice-e').val();
+        $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: "{}",
+        contentType: "text/json; charset=utf-8",
+        dataType: "text",
+        success: function (msg) {
+         console.log(msg)
+          $("#select-soft-music-choice-e option[value='0']").prop('selected', true);
+          $('#select-soft-music-choice-e').selectmenu('refresh');
+      }
+      }); 
+
+      }
+
+
 });
 
 
